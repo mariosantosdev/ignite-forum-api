@@ -1,4 +1,3 @@
-import { expect, it, test } from "vitest";
 import { Slug } from "./slug";
 
 test('Slug value objects', () => {

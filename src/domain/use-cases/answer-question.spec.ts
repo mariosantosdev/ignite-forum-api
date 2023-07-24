@@ -1,6 +1,5 @@
-import {expect, test} from 'vitest'
 import { AnswerQuestionUseCase } from './answer-question'
-import { AnswerRepository } from '../repostitories/answer-repository'
+import { AnswerRepository } from '~/domain/repostitories/answer-repository'
 
 const mockAnswerRepository: AnswerRepository = {
     async create(_answer) {
