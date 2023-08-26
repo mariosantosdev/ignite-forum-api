@@ -4,27 +4,27 @@ import { NotificationsRepository } from '../repositories/notification-repository
 import { NotAllowedError } from '~/core/errors/not-allowed-error'
 import { ResourceNotFoundError } from '~/core/errors/resource-not-found-error'
 
-interface SendNotificationUseCaseRequest {
+interface ReadNotificationUseCaseRequest {
   recipientId: string
   notificationId: string
 }
 
-interface SendNotificationUseCaseResponseData {
+interface ReadNotificationUseCaseResponseData {
   notification: Notification
 }
 
-type SendNotificationUseCaseResponse = Either<
+type ReadNotificationUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  SendNotificationUseCaseResponseData
+  ReadNotificationUseCaseResponseData
 >
 
-export class SendNotificationUseCase {
+export class ReadNotificationUseCase {
   constructor(private notificationsRepository: NotificationsRepository) {}
 
   async execute({
     recipientId,
     notificationId,
-  }: SendNotificationUseCaseRequest): Promise<SendNotificationUseCaseResponse> {
+  }: ReadNotificationUseCaseRequest): Promise<ReadNotificationUseCaseResponse> {
     const notification = await this.notificationsRepository.findById(
       notificationId,
     )
