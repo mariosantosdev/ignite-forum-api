@@ -5,8 +5,8 @@ import { AnswerRepository } from '../repostitories/answer-repository'
 import { AnswerAttachmentList } from '../../enterprise/entities/answer-attachment-list'
 import { AnswerAttachmentsRepository } from '../repostitories/answer-attachments-repository'
 import { Either, left, right } from '~/core/either'
-import { ResourceNotFoundError } from './errors/resource-not-found-error'
-import { NotAllowedError } from './errors/not-allowed-error'
+import { ResourceNotFoundError } from '~/core/errors/resource-not-found-error'
+import { NotAllowedError } from '~/core/errors/not-allowed-error'
 
 interface EditAnswerUseCaseRequest {
   answerId: string
